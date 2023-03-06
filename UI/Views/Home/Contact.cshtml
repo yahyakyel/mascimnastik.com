@@ -1,0 +1,82 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container-fluid page-header mb-5">
+    <div class="d-flex flex-column align-items-center justify-content-center pt-0 pt-lg-5" style="min-height: 500px">
+        <h4 class="display-4 mb-3 mt-0 mt-lg-5 text-white text-uppercase font-weight-bold">İLETİŞİM</h4>
+        <div class="d-inline-flex">
+            <p class="m-0 text-white"><a class="text-white" href="/Home/Index">Anasayfa</a></p>
+            <p class="m-0 text-white px-2">/</p>
+            <p class="m-0 text-white">İletişim</p>
+        </div>
+    </div>
+</div>
+
+<div class="container pt-5">
+    <div class="d-flex flex-column text-center mb-5">
+        <h4 class="text-primary font-weight-bold">Bizimle İletişime Geçin</h4>
+        <h4 class="display-4 font-weight-bold">Ön Başvuru Kaydı Oluşturun Sizi Arayalım!</h4>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="row px-3 pb-2">
+                @*<div class="col-sm-12 text-center mb-3">
+                        <i class="fa fa-2x fa-map-marker-alt mb-3 text-primary"></i>
+                        <h4 class="font-weight-bold">Address</h4>
+                        <p>123 Street, New York, USA</p>
+                    </div>*@
+                <div class="col-sm-12 text-center mb-3">
+                    <i class="fa fa-2x fa-phone-alt mb-3 text-primary"></i>
+                    <h4 class="font-weight-bold">Telefon</h4>
+                    <a href="tel:05458142023">0545 814 20 23</a>
+                    <br />
+                    <a href="tel:05330591967">0533 059 19 67</a>
+                </div> 
+
+                <div class="col-sm-12 text-center mb-3">
+                    <i class="far fa-2x fa-envelope mb-3 text-primary"></i>
+                    <h4 class="font-weight-bold">Email</h4>
+                    <a href="mailto:mascimnastik@gmail.com">mascimnastik@gmail.com</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="row">
+                <div class="col-md-10 pb-5">
+                    <div class="contact-form">
+                        <div id="success"></div>
+                        <form name="sentMessage" id="contactForm">
+                            <div class="control-group">
+                                <input type="text" class="form-control" id="firstname" placeholder="Adınız" required>
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="control-group">
+                                <input type="text" class="form-control" id="lastname" placeholder="Soyadınız" required>
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="control-group">
+                                <input type="email" class="form-control" id="email" placeholder="Mailiniz" required>
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="control-group">
+                                <input type="text" class="form-control" id="phone" placeholder="Telefonunuz" required>
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="control-group">
+                                <textarea class="form-control" rows="6" id="message" placeholder="Yorum"></textarea>
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div>
+                                <a class="btn btn-outline-primary" onclick="AddUser()" id="sendButton">Gönder</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/Assets/js/UserScript.js"></script>
+
+
