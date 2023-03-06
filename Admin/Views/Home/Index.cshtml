@@ -1,0 +1,148 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .graph-container {
+        width: 100%;
+        height: 30vh;
+    }
+</style>
+<div class="content d-flex flex-column flex-column-fluid" id="kt_content">
+    @*begin::Toolbar*@
+    <div class="toolbar py-2" id="kt_toolbar">
+        <!--begin::Container-->
+        <div id="kt_toolbar_container" class="container-fluid d-flex align-items-center">
+            <!--begin::Page title-->
+            <div class="flex-grow-1 flex-shrink-0 me-5">
+                <!--begin::Page title-->
+                <div data-kt-swapper="true" data-kt-swapper-mode="prepend" data-kt-swapper-parent="{default: '#kt_content_container', 'lg': '#kt_toolbar_container'}" class="page-title d-flex align-items-center flex-wrap me-3 mb-5 mb-lg-0">
+                    <!--begin::Title-->
+                    <h1 class="d-flex align-items-center text-dark fw-bolder my-1 fs-3">
+                        AnaSayfa
+                    </h1>
+                    <!--end::Title-->
+                </div>
+                <!--end::Page title-->
+            </div>
+            <!--end::Page title-->
+        </div>
+        <!--end::Container-->
+    </div>
+    @*end::Toolbar*@
+    <!--begin::Container-->
+    <div id="kt_content_container" class="container-xxl">
+
+        <!--begin::Row-->
+        <div class="row g-5 g-xl-8">
+            <div class="col-xl-12">
+                <!--begin::List Widget 4-->
+                <div class="card card-xl-stretch mb-xl-8">
+                    <!--begin::Header-->
+                    <div class="card-header border-0 pt-5">
+                        <h3 class="card-title align-items-start flex-column">
+                            <span class="card-label fw-bolder text-dark">Gelen Kullanıcılar</span>
+                        </h3>
+                    </div>
+                    <!--end::Header-->
+                    <!--begin::Body-->
+                    <div class="card-body pt-5 row">
+                        <div class="col-xl-4">
+                            <div class="card-toolbar">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="border border-dashed border-gray-300 text-center min-w-125px rounded pt-4 pb-2 my-3">
+                                            <span class="fs-4 fw-bold text-success d-block">Kullanıcı Sayısı</span>
+                                            <span class="fs-2hx fw-bolder text-gray-900 counted" data-kt-countup="true" id="AllUsersinTab"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-8">
+                            <div class="kt-portlet kt-portlet--height-fluid">
+                                <div class="kt-widget14">
+                                    <div class="kt-widget14__content">
+                                        <div class="kt-widget14__chart">
+                                            <canvas id="canvas" height="80"></canvas>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--end::Body-->
+                </div>
+                <!--end::List Widget 4-->
+            </div>
+        </div>
+        <!--end::Row-->
+        <!--begin::Row-->
+        <div class="row g-5 g-xl-8">
+            <div class="col-xl-6">
+                <div class="card card-xl-stretch mb-xl-8">
+                    <!--begin::Beader-->
+                    <div class="card-header border-0 py-5">
+                        <h3 class="card-title align-items-start flex-column">
+                            <span class="card-label fw-bolder fs-3 mb-1">Günlük Gelen Kullanıcı Sayısı</span>
+                        </h3>                  
+                    </div>
+                    <!--end::Header-->
+                    <!--begin::Body-->
+                    <div class="card-body p-0 d-flex flex-column">
+                        <!--begin::Stats-->
+                        <div class="card-p pt-5 bg-body flex-grow-1">
+                            <!--begin::Row-->
+                            <div class="row g-0">
+                                <div class="col-xl-4">
+                                    <div class="d-flex align-items-sm-center mb-7" id="UserInfo">
+                                        <!--begin::Section-->
+                                        <div class="d-flex align-items-center flex-row-fluid flex-wrap">
+                                            <div class="flex-grow-1 me-2">
+                                                <div class="col">
+                                                    <div class="border border-dashed border-gray-300 text-center min-w-125px rounded pt-4 pb-2 my-3">
+                                                        <span class="fs-4 fw-bold text-success d-block">Kullanıcı Sayısı</span>
+                                                        <span class="fs-2hx fw-bolder text-gray-900 counted" data-kt-countup="true" id="TimeParamaterUsers"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--end::Section-->
+                                    </div>
+                                </div>
+                                <div class="col-xl-8">
+                                    <div class="kt-portlet kt-portlet--height-fluid">
+                                        <div class="kt-widget14">
+                                            <div class="kt-widget14__content">
+                                                <div class="kt-widget14__chart">
+                                                    <canvas id="chart" style="height: 140px; width: 140px;"></canvas>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--end::Row-->
+                        </div>
+                        <!--end::Stats-->
+                        <!--begin::Chart-->
+                        <!--end::Body-->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--end::Row-->
+
+    </div>
+
+
+    <!--end::Container-->
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+
+<script src="~/assets/vendors/general/jquery/dist/jquery.js" type="text/javascript"></script>
+<script>
+    $(document).ready(function () {
+        AdminIndex();
+        AdminIndex2();
+    });
+</script>
