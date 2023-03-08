@@ -11,7 +11,7 @@ namespace Entity
     {
         public EduContext() : base("dbMAS")
         {
-            Database.Connection.ConnectionString = @"server=(localdb)\mssqllocaldb; database=dbMAS;Integrated Security=true";
+            //Database.Connection.ConnectionString = @"server=(localdb)\mssqllocaldb; database=dbMAS;Integrated Security=true";
         }
         public DbSet<Admins> Admins { get; set; }
         public DbSet<Users> Users { get; set; }
